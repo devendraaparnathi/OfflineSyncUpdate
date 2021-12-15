@@ -11,20 +11,17 @@ public class Repository {
     private CommentDAO mCommentDAO;
     private LiveData<List<Comment>> mLivedata;
 
-    Repository(Application application)
-    {
+    Repository(Application application) {
         CommentRoomDatabase database = CommentRoomDatabase.getDatabase(application);
         mCommentDAO = database.commentDAO();
         mLivedata = mCommentDAO.getAlphabetizedComment();
     }
 
-    LiveData<List<Comment>> getLivedata()
-    {
+    LiveData<List<Comment>> getLivedata() {
         return mLivedata;
     }
 
-    void insert(Comment comment)
-    {
+    void insert(Comment comment) {
         CommentRoomDatabase.databaseWriteExecutor.execute(new Runnable() {
             @Override
             public void run() {
@@ -32,5 +29,4 @@ public class Repository {
             }
         });
     }
-
 }

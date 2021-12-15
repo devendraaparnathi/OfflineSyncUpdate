@@ -6,7 +6,10 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.BroadcastReceiver;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -23,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
     EditText editText;
     Button button;
 
+    //Extra Code
+    BroadcastReceiver br;
+    IntentFilter filter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
         commentViewModel.getListComment().observe(this, comments -> {
             adapter.submitList(comments);
         });
+
+        br = new MyBroadcastReceiver();
+        filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        filter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+        this.registerReceiver(br,filter);
 
         recyclerView = findViewById(R.id.rvCommentsView);
         adapter = new CommentAdapter(new CommentAdapter.CommentDiff());
@@ -55,5 +67,20 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }
