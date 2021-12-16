@@ -4,7 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Admin/OfflineSyncUpdate/app/src/main/res/drawable/custom_edittext.xml" value="0.30277777777777776" />
-        <entry key="..\:/Users/Admin/OfflineSyncUpdate/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/Admin/OfflineSyncUpdate/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/Admin/OfflineSyncUpdate/app/src/main/res/layout/activity_network_connection.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/OfflineSyncUpdate/app/src/main/res/layout/comment_data.xml" value="0.40783744557329465" />
         <entry key="..\:/Users/Admin/OfflineSyncUpdate/app/src/main/res/layout/comments_data.xml" value="0.36666666666666664" />
       </map>

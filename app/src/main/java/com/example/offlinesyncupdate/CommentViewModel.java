@@ -5,6 +5,8 @@ import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import com.example.offlinesyncupdate.Api.Comment;
+
 import java.util.List;
 
 public class CommentViewModel extends AndroidViewModel {
@@ -24,6 +26,10 @@ public class CommentViewModel extends AndroidViewModel {
 
     public void insert(Comment comment) {
         repository.insert(comment);
+    }
+
+    public void deleteAll(){
+        repository.deleteAll();
     }
 
 }

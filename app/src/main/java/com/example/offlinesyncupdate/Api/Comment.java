@@ -1,4 +1,4 @@
-package com.example.offlinesyncupdate;
+package com.example.offlinesyncupdate.Api;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

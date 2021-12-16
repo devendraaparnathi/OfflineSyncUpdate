@@ -4,6 +4,8 @@ import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 
+import com.example.offlinesyncupdate.Api.Comment;
+
 import java.util.List;
 
 public class Repository {
@@ -29,4 +31,10 @@ public class Repository {
             }
         });
     }
+
+    void deleteAll()
+    {
+        mCommentDAO.deleteAll();
+    }
+
 }

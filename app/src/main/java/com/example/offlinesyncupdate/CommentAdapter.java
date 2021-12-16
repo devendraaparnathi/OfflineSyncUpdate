@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 
+import com.example.offlinesyncupdate.Api.Comment;
+
 public class CommentAdapter extends ListAdapter<Comment,CommentViewHolder> {
 
     public CommentAdapter(@NonNull DiffUtil.ItemCallback<Comment> diffCallback) {
